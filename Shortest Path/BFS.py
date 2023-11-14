@@ -1,3 +1,6 @@
+# https://github.com/sara-hrad
+# Implementation of BFS algorithm for solving the shortest path problem
+# Run time: O(n+m) where n and m are the number of nodes and ages.
 from collections import defaultdict, deque
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -18,6 +21,7 @@ class Graph:
 					queue.append((neighbor, path + [neighbor]))
 		return None  # Return None if no path is found
 
+	# Visualize the graph
 	def plot_graph(self):
 		g_draw = nx.Graph(self.g)
 		nx.draw(g_draw, with_labels=True)

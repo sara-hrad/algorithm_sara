@@ -1,3 +1,9 @@
+# https://github.com/sara-hrad
+# The implementation of a randomized selection algorithm named as quickselect.
+# This algorithm has the average running time of O(n).
+
+# The partition function partition the array to entries smaller and bigger than pivot point.
+
 def partition(array, left, right):
     pivot = array[left]
     i = left+1
@@ -9,7 +15,8 @@ def partition(array, left, right):
     (array[left], array[i-1]) = (array[i-1], array[left])
     return i-1
 
-
+# The main r_select function recursively find the kth smallest elements by comparing the
+# index of pivot point in the partioned array and k.
 def r_select(array, left, right, k):
     if 0 < k <= right - left + 1:
         partition_idx = partition(array, left, right)

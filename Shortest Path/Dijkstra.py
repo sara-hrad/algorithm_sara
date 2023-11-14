@@ -1,3 +1,5 @@
+# https://github.com/sara-hrad
+# Implentation of Dijkstra for shortest path problem
 import networkx as nx
 import matplotlib.pyplot as plt
 import heapq
@@ -34,6 +36,7 @@ class Graph:
 
         return distances, predecessors
 
+    # Reconstruct the shortest path
     def reconstruct_path(self, start, end):
         _, predecessors = self.dijkstra(start)
 
@@ -46,6 +49,7 @@ class Graph:
 
         return path
 
+    # Visualize the graph including the weights of each edge
     def plot_graph(self):
         graph_to_plot = nx.Graph()
         for node, neighbors in self.g.items():
@@ -55,7 +59,6 @@ class Graph:
         pos = nx.spring_layout(graph_to_plot)
         labels = nx.get_edge_attributes(graph_to_plot, 'weight')
         nx.draw(graph_to_plot, pos, with_labels=True, font_weight='bold', node_size=700, node_color='skyblue', font_size=8, font_color='black')
-        # nx.draw(g_draw, with_labels=True)
         nx.draw_networkx_edge_labels(graph_to_plot, pos, edge_labels=labels)
         plt.show()
 

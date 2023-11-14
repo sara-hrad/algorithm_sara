@@ -1,3 +1,8 @@
+# https://github.com/sara-hrad
+# The implementation of a sorting algorithm named as quicksort.
+# This algorithm has the average running time of O(n) with no extra memory
+
+# The partition function partition the array to entries smaller and bigger than pivot point.
 def partition(array, left, right):
     pivot = array[left]
     i = left+1
@@ -9,7 +14,7 @@ def partition(array, left, right):
     (array[left], array[i-1]) = (array[i-1], array[left])
     return i-1
 
-
+# The quicksort sort each part of the partioned array recursively.
 def quicksort(array, left, right):
     if left < right:
         partition_idx = partition(array, left, right)
